@@ -2,7 +2,7 @@
 
 {
   "displayName": "Persado Generic Tracker",
-  "description": "Persado trackers library initialization",
+  "description": "Place the Persado Generic Tracker on all the pages you want to measure. Always load it before any other Persado tracker",
   "securityGroups": [],
   "id": "cvt_temp_public_id",
   "type": "TAG",
@@ -45,7 +45,8 @@ ___TEMPLATE_PARAMETERS___
     "simpleValueType": true,
     "name": "application_id",
     "type": "TEXT",
-    "valueHint": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    "valueHint": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "help": "Persado provides you with the brand id."
   }
 ]
 
@@ -169,13 +170,11 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 const log = require('logToConsole');
 const callInWindow = require('callInWindow');
 const injectScript = require('injectScript');
-
-const applicationId = data.application_id;
+const encodeUriComponent = require('encodeUriComponent');
 const libraryUrl = "https://wsb.persado.com/assets/v2/wsb.js";
-
 const onSuccess = () => {
   callInWindow('persado_sp', 'newTracker','tracker','t.persado.com', { 
-    appId: applicationId, 
+    appId: encodeUriComponent(data.application_id), 
     discoverRootDomain: true,
     respectDoNotTrack: true, 
     userFingerprint: true,
@@ -185,17 +184,14 @@ const onSuccess = () => {
   
   data.gtmOnSuccess();
 };
-
-// If the script fails to load, log a message and signal failure
 const onFailure = () => {
   log('Script load failed.');
   data.gtmOnFailure();
 };
-
 injectScript(libraryUrl, onSuccess, onFailure);
-log(1);
+
 
 
 ___NOTES___
 
-Created on 14/08/2019, 18:46:00
+Created on 19/09/2019, 12:13:38
