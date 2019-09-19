@@ -1,4 +1,4 @@
-﻿___INFO___
+___INFO___
 
 {
   "displayName": "Persado Generic Tracker",
@@ -173,15 +173,15 @@ const injectScript = require('injectScript');
 const encodeUriComponent = require('encodeUriComponent');
 const libraryUrl = "https://wsb.persado.com/assets/v2/wsb.js";
 const onSuccess = () => {
-  callInWindow('persado_sp', 'newTracker','tracker','t.persado.com', { 
-    appId: encodeUriComponent(data.application_id), 
+  callInWindow('persado_sp', 'newTracker','tracker','t.persado.com', {
+    appId: encodeUriComponent(data.application_id),
     discoverRootDomain: true,
-    respectDoNotTrack: true, 
+    respectDoNotTrack: true,
     userFingerprint: true,
     userFingerprintSeed: 12345432,
     gaCookies: true
   });
-  
+
   data.gtmOnSuccess();
 };
 const onFailure = () => {
