@@ -1,8 +1,20 @@
+___TERMS_OF_SERVICE___
+
+
+By creating or modifying this file you agree to Google Tag Manager's Community
+
+Template Gallery Developer Terms of Service available at
+
+https://developers.google.com/tag-manager/gallery-tos (or such other URL as
+
+Google may provide), as modified from time to time.
+
 ___INFO___
 
 {
   "displayName": "Persado Generic Tracker",
   "description": "Place the Persado Generic Tracker on all the pages you want to measure. Always load it before any other Persado tracker",
+  "categories": ["MARKETING","ADVERTISING","EXPERIMENTATION"],
   "securityGroups": [],
   "id": "cvt_temp_public_id",
   "type": "TAG",
