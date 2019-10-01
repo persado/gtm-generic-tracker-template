@@ -1,7 +1,9 @@
 homepage: "www.persado.com"
 documentation: "https://www.persado.com"
 versions:
-  - sha: 3ef1276
-    changeNotes: Initial Version
+  - sha: 9f6390f
+    changeNotes: Removed spaces from TOS area
   - sha: 0ceeed6
     changeNotes: Minor changes to template
+  - sha: 3ef1276
+    changeNotes: Initial Version
