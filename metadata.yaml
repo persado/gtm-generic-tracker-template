@@ -1,6 +1,8 @@
 homepage: "www.persado.com"
 documentation: "https://www.persado.com"
 versions:
+  - sha: 8fe62ca
+    changeNotes: Updated tracking template
   - sha: 9f6390f
     changeNotes: Removed spaces from TOS area
   - sha: 0ceeed6
